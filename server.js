@@ -6,7 +6,12 @@ import mongoose from "mongoose";
 
 const app = express();
 
+import appRouter from './routes/appRoutes.js'
+
 app.use(express.json());
+
+
+app.use("/api/v1/app", appRouter)
 
 
 app.get("/", (req, res) => {

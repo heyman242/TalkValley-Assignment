@@ -7,11 +7,13 @@ import mongoose from "mongoose";
 const app = express();
 
 import appRouter from './routes/appRoutes.js'
+import authRouter from "./routes/authRouter.js";
 
 app.use(express.json());
 
 
 app.use("/api/v1/app", appRouter)
+app.use("/api/v1/auth", authRouter);
 
 
 app.get("/", (req, res) => {

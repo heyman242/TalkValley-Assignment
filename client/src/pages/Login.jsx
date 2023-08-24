@@ -2,6 +2,7 @@ import { Form, redirect, Link } from "react-router-dom";
 import { FormRow } from "../components";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
+import { HomeIcon } from "../assets/icons";
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -19,17 +20,30 @@ export const action = async ({ request }) => {
 
 const Login = () => {
   return (
-    <div>
-      <Form method="post">
-        <h1>Login Page</h1>
-        <FormRow type="email" name="email" />
-        <FormRow type="password" name="password" />
-        <button type="submit">Submit</button>
-        <p>
-          not a member yet!
-          <Link to="/register">register page</Link>
-        </p>
-      </Form>
+    <div className="min-h-screen  flex items-center justify-center bg-gray-100">
+      <div className="max-w-2xl p-7 border bg-white rounded-lg shadow-lg">
+        <div className="flex items-center justify-center">
+          <HomeIcon className="w-12 h-12 mx-auto" />
+          <h4 className="text-2xl font-bold mx-1 ">Login Page</h4>
+        </div>
+        <Form method="post" className="mt-4">
+          
+          <FormRow type="text" name="email" labelText="Email:" />
+          <FormRow type="password" name="password" labelText="Password:" />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 mt-6 rounded-lg"
+          >
+            Login
+          </button>
+          <p className="mt-4 text-center">
+            Not a member yet?{" "}
+            <Link to="/register" className="text-blue-500">
+              Register
+            </Link>
+          </p>
+        </Form>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center py-12">
       <nav className="fixed top-0 left-0 p-4">
-        <HomeIcon className="text-blue-500 w-6 h-6" />
+        <HomeIcon  />
       </nav>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
         <div className="text-center">

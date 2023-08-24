@@ -1,6 +1,6 @@
-const FormRow = ({ type, name, labelText, defaultValue, onChange }) => {
+const FormRow = ({ type, name, labelText,  onChange }) => {
   return (
-    <div className="form-row">
+    <div>
       <label htmlFor={name} >
         {labelText || name}
       </label>
@@ -8,7 +8,6 @@ const FormRow = ({ type, name, labelText, defaultValue, onChange }) => {
         type={type}
         id={name}
         name={name}
-        defaultValue={defaultValue || ""}
         onChange={onChange}
         required
       />

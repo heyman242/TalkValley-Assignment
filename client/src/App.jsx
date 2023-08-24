@@ -11,38 +11,40 @@ import {
 } from "./pages";
 
 import { action as loginAction } from "./pages/Login";
+import { action as registerAction } from "./pages/Register";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<HomeLayout/>,
+    path: "/",
+    element: <HomeLayout />,
     children: [
       {
         index: true,
         element: <Landing />,
       },
       {
-        path:'register',
-        element:<Register/>
+        path: "register",
+        element: <Register />,
+        action: registerAction,
       },
       {
-        path:'login',
-        element:<Login/>,
+        path: "login",
+        element: <Login />,
         action: loginAction,
       },
       {
-        path:'dashboard',
-        element:<Dashboard/>,
-        children:[
+        path: "dashboard",
+        element: <Dashboard />,
+        children: [
           {
-            index:true,
-            element:<MainPage/>
-          }
-        ]
-      }
-    ]
-  }
-])
+            index: true,
+            element: <MainPage />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 function App() {
   return <RouterProvider router={router}/>;

@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center py-12">
       <nav className="fixed top-0 left-0 p-4">
-        <HomeIcon  />
+        <HomeIcon />
       </nav>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
         <div className="text-center">
@@ -14,10 +14,39 @@ const Landing = () => {
             Record<span className="text-blue-500">Hub</span>
           </h1>
           <p className="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            omnis provident quia, doloribus consequuntur nulla corporis
-            veritatis recusandae laborum voluptatibus saepe consectetur pariatur
-            explicabo mollitia magnam. Similique totam aperiam laborum.
+            <p>
+              RecordHub is a user-friendly platform for screen and webcam
+              recording. Create tutorials, presentations, and more with ease.
+            </p>
+            <br />
+            <h3>
+              <strong>Technologies Used:</strong>
+            </h3>
+            <ul>
+              <li>
+                <strong>React:</strong> For building the frontend.
+              </li>
+              <li>
+                <strong>Node:</strong> For building the backend.
+              </li>
+              <li>
+                <strong>Express:</strong> For building backend server.
+              </li>
+              <li>
+                <strong>Mongo DB:</strong> Store user information.
+              </li>
+              <li>
+                <strong>Tailwind CSS:</strong> Used for styling.
+              </li>
+              <li>
+                <strong>React Media Recorder:</strong> Library used for
+                recording screen and webcam footage.
+              </li>
+              <li>
+                <strong>React Router:</strong> For navigation between different
+                pages
+              </li>
+            </ul>
           </p>
           <div className="mt-4">
             <Link
@@ -40,7 +69,6 @@ const Landing = () => {
           className="w-full md:max-w-xl mx-auto"
         />
       </div>
-      
     </div>
   );
 };

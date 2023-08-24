@@ -1,8 +1,8 @@
-import { HomeIcon } from "../assets/icons";
+import { HomeIcon, LogoutIcon } from "../assets/icons";
 import { useDashboardContext } from "../pages/Dashboard";
 
 const Navbar = () => {
-  const { logoutUser } = useDashboardContext();
+  const { user,logoutUser } = useDashboardContext();
   return (
     <header>
       <div>
@@ -10,10 +10,10 @@ const Navbar = () => {
         <span>RecordHub</span>
       </div>
       <div>
-        <div>Dashboard</div>
+        <div>Welcome: {user?.name}</div>
       </div>
       <div>
-        <button type="button" onClick={logoutUser}>Logout</button>
+        <button type="button" onClick={logoutUser}><LogoutIcon/></button>
       </div>
     </header>
   );

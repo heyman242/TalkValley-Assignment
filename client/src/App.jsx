@@ -10,6 +10,8 @@ import {
   MainPage,
 } from "./pages";
 
+import { action as loginAction } from "./pages/Login";
+
 const router = createBrowserRouter([
   {
     path:"/",
@@ -25,7 +27,8 @@ const router = createBrowserRouter([
       },
       {
         path:'login',
-        element:<Login/>
+        element:<Login/>,
+        action: loginAction,
       },
       {
         path:'dashboard',

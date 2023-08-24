@@ -4,7 +4,7 @@ const HomeIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="w-6 h-6"
+      className="w-8 h-8"
     >
       <path d="M12 9a3.75 3.75 0 100 7.5A3.75 3.75 0 0012 9z" />
       <path

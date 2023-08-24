@@ -67,44 +67,84 @@ const MainPage = () => {
   };
 
   return (
-    <div>
-      <h1>Screen Recorder</h1>
-      <div>
-        <h3>
-          Screen Recording:
-          {screenRecordingStatus === "recording" ? (
-            <div>
-              <button onClick={handleScreenRecordingStop}>
+    <div className="p-4 bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4 text-red-600 underline">
+          RecordHub Lets You Record Your Screen And Webcam For Free!!!
+        </h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="border rounded-lg p-4 bg-white shadow-lg">
+          <h3 className="text-xl font-semibold mb-2 text-center">
+            Screen Recording
+          </h3>
+          <div className="text-center">
+            {screenRecordingStatus === "recording" ? (
+              <button
+                onClick={handleScreenRecordingStop}
+                className="bg-red-500 text-white px-4 py-2 rounded-lg"
+              >
                 Stop Recording
               </button>
-            </div>
-          ) : (
-            <button onClick={startScreenRecording}>Start Recording</button>
-          )}
+            ) : (
+              <button
+                onClick={startScreenRecording}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+              >
+                Start Recording
+              </button>
+            )}
+          </div>
           {screenRecordingStatus === "stopped" && screenMediaBlobUrl && (
-            <video src={screenMediaBlobUrl} controls />
+            <div className="mt-4">
+              <video
+                src={screenMediaBlobUrl}
+                controls
+                className="w-full rounded-lg"
+              />
+            </div>
           )}
-        </h3>
-      </div>
-      <div>
-        <h3>
-          Webcam Recording:
-          {webcamRecordingStatus === "recording" ? (
-            <button onClick={handleWebcamRecordingStop}>Stop Recording</button>
-          ) : (
-            <button onClick={startWebcamRecording}>Start Recording</button>
-          )}
+        </div>
+        <div className="border rounded-lg p-4 bg-white shadow-lg">
+          <h3 className="text-xl font-semibold mb-2 text-center">
+            Webcam Recording
+          </h3>
+          <div className="text-center">
+            {webcamRecordingStatus === "recording" ? (
+              <button
+                onClick={handleWebcamRecordingStop}
+                className="bg-red-500 text-white px-4 py-2 rounded-lg"
+              >
+                Stop Recording
+              </button>
+            ) : (
+              <button
+                onClick={startWebcamRecording}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+              >
+                Start Recording
+              </button>
+            )}
+          </div>
           {webcamRecordingStatus === "stopped" && webcamMediaBlobUrl && (
-            <video src={webcamMediaBlobUrl} controls />
+            <div className="mt-4">
+              <video
+                src={webcamMediaBlobUrl}
+                controls
+                className="w-full rounded-lg"
+              />
+            </div>
           )}
           {webcamRecordingStatus === "recording" && (
-            <Webcam 
-              audio={true}
-              videoConstraints={{ facingMode: "user" }} 
-              ref={webcamRef}
-            />
+            <div className="mt-4">
+              <Webcam
+                audio={true}
+                videoConstraints={{ facingMode: "user" }}
+                ref={webcamRef}
+              />
+            </div>
           )}
-        </h3>
+        </div>
       </div>
     </div>
   );

@@ -10,12 +10,16 @@ const Navbar = () => {
         <span className="font-bold text-xl">RecordHub</span>
       </a>
       <div>
-        <div className="font-bold text-xl border border-grey-500 rounded-full px-4 py-1 ">
+        <div className="font-bold text-xl border border-grey-500 rounded-full px-4 py-1 shadow shadow-grey-300 ">
           Welcome: {user?.name}
         </div>
       </div>
       <div>
-        <button type="button" onClick={logoutUser} className="mx-2 flex">
+        <button
+          type="button"
+          onClick={logoutUser}
+          className="mx-2  flex font-bold text-xl"
+        >
           Logout
           <LogoutIcon />
         </button>

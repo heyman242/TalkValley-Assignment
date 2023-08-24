@@ -2,7 +2,7 @@ import { useRef} from "react";
 import { useReactMediaRecorder } from "react-media-recorder";
 import Webcam from "react-webcam"; 
 
-const ScreenRecorder = () => {
+const MainPage = () => {
   const webcamRef = useRef(null);
   const {
     status: screenRecordingStatus,
@@ -12,7 +12,7 @@ const ScreenRecorder = () => {
   } = useReactMediaRecorder({
     video: true,
     screen: true,
-    mediaType: "video/mp4",
+    mediaType: "video/webm",
   });
 
   const {
@@ -29,9 +29,9 @@ const ScreenRecorder = () => {
   const saveScreenRecordingToLocalStorage = () => {
     const screenRecordingFile = new File(
       [screenMediaBlobUrl],
-      "screen-recording.mp4",
+      "screen-recording.webm",
       {
-        type: "video/mp4",
+        type: "video/webm",
       }
     );
 
@@ -110,4 +110,4 @@ const ScreenRecorder = () => {
   );
 };
 
-export default ScreenRecorder;
+export default MainPage;

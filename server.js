@@ -37,17 +37,13 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const port = process.env.PORT || 5100;
-
-async function startServer() {
-  try {
-    await mongoose.connect(process.env.MONGO_URL);
-    app.listen(port, () => {
-      console.log(`server running on PORT ${port}....`);
-    });
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
+mongoose.connect(process.env.MONGO_URL, function (err) {
+  if (err) {
+    console.log("Error: mongo not connected");
+  } else {
+    console.log("mongo connected");
   }
-}
-
-startServer();
+});
+app.listen(port, () => {
+  console.log(`server running on PORT ${port}....`);
+});

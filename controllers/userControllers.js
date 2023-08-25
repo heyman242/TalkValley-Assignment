@@ -21,3 +21,7 @@ export const getCurrentUser = async (req, res) => {
       .json({ message: "Internal server error" });
   }
 };
+
+export const uploadScreenRecording = async (req, res) => {
+  
+}
